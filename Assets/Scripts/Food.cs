@@ -16,7 +16,7 @@ public class Food : MonoBehaviour
         rb.velocity = startSpeed;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if(transform.position.y < -6)
         {
