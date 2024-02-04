@@ -111,6 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startSpeed: {x: 0, y: 0}
+  rotateSpeed: 180
+  fruitExplode: {fileID: 4710457793315237983, guid: 1c279ce472352b5429c7a59f4753a905, type: 3}
 --- !u!1001 &7472505318263355163
 PrefabInstance:
   m_ObjectHideFlags: 0
