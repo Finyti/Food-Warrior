@@ -15,6 +15,17 @@ public class Food : MonoBehaviour
     public GameObject fruitExplode;
 
 
+    [System.Serializable]
+    public class FoodEntry
+    {
+        public bool isBomb;
+        public float delay;
+        public float xPosition;
+        public Vector2 velocity;
+        public bool isRandomPosition;
+        public bool isRandomVelocity;
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

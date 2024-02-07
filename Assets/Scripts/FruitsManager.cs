@@ -4,6 +4,8 @@ using UnityEngine;
 using System.Threading.Tasks;
 using System.Threading;
 using Unity.VisualScripting;
+using static Food;
+
 
 public class FruitsManager : MonoBehaviour
 {
@@ -11,26 +13,70 @@ public class FruitsManager : MonoBehaviour
     public List<GameObject> prefabs = new List<GameObject>();
     public GameObject bombPrefab;
 
-    public float spawnSpeed = 1f;
+    public float spawnSpeed = 3f;
 
     public float bombChance = 20;
 
     public GameObject bombSmoke;
     public GameObject bombSparkles;
-    void Start()
+
+    public int currentWave = 0;
+
+    public List<Wave> waveProperties;
+
+    [System.Serializable]
+
+
+
+    public class Wave
     {
-        Task testTask1 = AsyncTimer.Delay(spawnSpeed, CreateFruit, false);
+        public float waveTime;
+        public List<FoodEntry> foods = new List<FoodEntry>();
+    }
+
+
+
+
+
+
+    async void Start()
+    {
+        NextWave();
+        //await new WaitForSeconds(5f);
+        //Task testTask1 = AsyncTimer.Delay(spawnSpeed, CreateFruit, false);
     }
 
     void Update()
     {
 
     }
-    void CreateFruit()
+
+
+
+    async void NextWave()
     {
-        if(Application.isPlaying)
+        if (currentWave < waveProperties.Count)
         {
-            bool isBomb = Random.Range(0, 100) < bombChance;
+            print(1);
+            var foodsList = waveProperties[currentWave].foods;
+            await new WaitForSeconds(waveProperties[currentWave].waveTime);
+            foreach (var food in foodsList)
+            {
+
+                CreateFruit(food);
+            }
+            currentWave++;
+            NextWave();
+        }
+
+
+    }
+    async void CreateFruit(FoodEntry currentFood)
+    {
+        if (Application.isPlaying)
+        {
+            await new WaitForSeconds(currentFood.delay);
+            bool isBomb = currentFood.isBomb;
             GameObject fruit;
             if (isBomb)
             {
@@ -48,21 +94,25 @@ public class FruitsManager : MonoBehaviour
                 fruit = Instantiate(prefabs[r], prefabs[r].transform.position, prefabs[r].transform.rotation);
             }
 
-            fruit.transform.position += new Vector3(Random.Range(-6, 6), 0, 0);
-
-            int minXPower = -3;
-            int maxXPower = 3;
-            if(fruit.transform.position.x >= 4)
+            if (!currentFood.isRandomPosition)
             {
-                maxXPower -= 2;
+                fruit.transform.position += new Vector3(currentFood.xPosition, 0, 0);
             }
-            if (fruit.transform.position.x <= -4)
+            else
             {
-                minXPower += 2;
+                fruit.transform.position += new Vector3(Random.Range(-6, 6), 0, 0);
             }
-            fruit.GetComponent<Food>().startSpeed = new Vector2(Random.Range(minXPower, maxXPower), Random.Range(12, 14));
+            if (!currentFood.isRandomVelocity)
+            {
+                fruit.GetComponent<Food>().startSpeed = new Vector2(currentFood.velocity.x, currentFood.velocity.y);
+            }
+            else
+            {
+                float xMultiplier = Random.Range(0.9f, 1.1f);
+                fruit.GetComponent<Food>().startSpeed = new Vector2(currentFood.velocity.x * xMultiplier, Random.Range(12, 14));
+            }
 
-            Task testTask = AsyncTimer.Delay(spawnSpeed, CreateFruit, false);
+
         }
 
     }
