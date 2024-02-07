@@ -349,26 +349,254 @@ MonoBehaviour:
   bombSparkles: {fileID: 1402078628944892674, guid: 0d73b9fb633792746a8aa4995e463a5e, type: 3}
   currentWave: 0
   waveProperties:
-  - waveTime: 0
+  - waveTime: 2
     foods:
     - isBomb: 0
       delay: 0
-      xPosition: -1
+      xPosition: -1.5
       velocity: {x: 0, y: 0}
       isRandomPosition: 0
       isRandomVelocity: 1
-    - isBomb: 1
-      delay: 1
-      xPosition: 0
+  - waveTime: 3
+    foods:
+    - isBomb: 0
+      delay: 0
+      xPosition: 1.5
       velocity: {x: 0, y: 0}
+      isRandomPosition: 0
+      isRandomVelocity: 1
+  - waveTime: 3
+    foods:
+    - isBomb: 0
+      delay: 0
+      xPosition: 2.5
+      velocity: {x: -0.6, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
+    - isBomb: 0
+      delay: 0
+      xPosition: 2.7
+      velocity: {x: -0.5, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
+  - waveTime: 3
+    foods:
+    - isBomb: 0
+      delay: 0
+      xPosition: 0
+      velocity: {x: 0.5, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
+    - isBomb: 0
+      delay: 0
+      xPosition: 3
+      velocity: {x: -0.7, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
+    - isBomb: 0
+      delay: 0
+      xPosition: -2.5
+      velocity: {x: 0.6, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
+  - waveTime: 3
+    foods:
+    - isBomb: 1
+      delay: 0
+      xPosition: -2
+      velocity: {x: 1, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
+  - waveTime: 3
+    foods:
+    - isBomb: 1
+      delay: 0
+      xPosition: 1
+      velocity: {x: -2, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
+    - isBomb: 0
+      delay: 0
+      xPosition: 1
+      velocity: {x: 1, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
+    - isBomb: 0
+      delay: 0
+      xPosition: 2
+      velocity: {x: -0.5, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
+  - waveTime: 3
+    foods:
+    - isBomb: 0
+      delay: 0
+      xPosition: 0
+      velocity: {x: -0.5, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
+    - isBomb: 0
+      delay: 0.6
+      xPosition: 0.57
+      velocity: {x: 0.53, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
+    - isBomb: 0
+      delay: 1.2
+      xPosition: 1.08
+      velocity: {x: -0.95, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
+    - isBomb: 0
+      delay: 1.8
+      xPosition: 0.38
+      velocity: {x: -1.1, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
+    - isBomb: 0
+      delay: 2.4
+      xPosition: -1.01
+      velocity: {x: -0.65, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
+    - isBomb: 0
+      delay: 3
+      xPosition: -1.73
+      velocity: {x: -0.29, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
+    - isBomb: 0
+      delay: 3.6
+      xPosition: -2.33
+      velocity: {x: -0.14, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
+  - waveTime: 7
+    foods:
+    - isBomb: 0
+      delay: 0
+      xPosition: 0
+      velocity: {x: -0.5, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 1
+    - isBomb: 0
+      delay: 0.5
+      xPosition: 0.57
+      velocity: {x: 0.53, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 1
+    - isBomb: 0
+      delay: 1
+      xPosition: 1.08
+      velocity: {x: -0.95, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 1
+    - isBomb: 0
+      delay: 1.5
+      xPosition: 0.38
+      velocity: {x: -1.1, y: 13}
       isRandomPosition: 0
       isRandomVelocity: 1
     - isBomb: 0
       delay: 2
-      xPosition: 1
-      velocity: {x: 0, y: 0}
+      xPosition: -1.01
+      velocity: {x: -0.65, y: 13}
       isRandomPosition: 0
       isRandomVelocity: 1
+    - isBomb: 0
+      delay: 2.5
+      xPosition: -1.73
+      velocity: {x: -0.29, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 1
+    - isBomb: 0
+      delay: 3
+      xPosition: -2.33
+      velocity: {x: -0.14, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 1
+  - waveTime: 7
+    foods:
+    - isBomb: 0
+      delay: 0
+      xPosition: 0
+      velocity: {x: -0.5, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 1
+    - isBomb: 0
+      delay: 0.5
+      xPosition: 0.57
+      velocity: {x: 0.53, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 1
+    - isBomb: 0
+      delay: 1
+      xPosition: 1.08
+      velocity: {x: -0.95, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 1
+    - isBomb: 0
+      delay: 1.5
+      xPosition: 0.38
+      velocity: {x: -1.1, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 1
+    - isBomb: 0
+      delay: 2
+      xPosition: -1.01
+      velocity: {x: -0.65, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 1
+    - isBomb: 0
+      delay: 2.5
+      xPosition: -1.73
+      velocity: {x: -0.29, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 1
+    - isBomb: 0
+      delay: 3
+      xPosition: -2.33
+      velocity: {x: -0.14, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 1
+  - waveTime: 7
+    foods:
+    - isBomb: 0
+      delay: 0
+      xPosition: -3
+      velocity: {x: 0.1, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
+    - isBomb: 0
+      delay: 0
+      xPosition: -1.8
+      velocity: {x: -0.2, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
+    - isBomb: 0
+      delay: 0
+      xPosition: -0.6
+      velocity: {x: 0.28, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
+    - isBomb: 0
+      delay: 0
+      xPosition: 1.8
+      velocity: {x: -0.29, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
+    - isBomb: 0
+      delay: 0
+      xPosition: 0.6
+      velocity: {x: -0.17, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
+    - isBomb: 0
+      delay: 0
+      xPosition: 3
+      velocity: {x: 0.29, y: 13}
+      isRandomPosition: 0
+      isRandomVelocity: 0
 --- !u!4 &1275446071
 Transform:
   m_ObjectHideFlags: 0
