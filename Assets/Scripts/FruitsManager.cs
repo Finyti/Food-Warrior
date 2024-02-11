@@ -13,6 +13,10 @@ public class FruitsManager : MonoBehaviour
     public List<GameObject> prefabs = new List<GameObject>();
     public GameObject bombPrefab;
 
+    public bool GameActive = true;
+
+    public int misses = 0;
+
     public float spawnSpeed = 3f;
 
     public float bombChance = 20;
@@ -55,25 +59,41 @@ public class FruitsManager : MonoBehaviour
 
     async void NextWave()
     {
-        if (currentWave < waveProperties.Count)
+        if(GameActive)
         {
-            print(1);
-            var foodsList = waveProperties[currentWave].foods;
-            await new WaitForSeconds(waveProperties[currentWave].waveTime);
-            foreach (var food in foodsList)
+            if (currentWave < waveProperties.Count)
             {
+                var foodsList = waveProperties[currentWave].foods;
+                await new WaitForSeconds(waveProperties[currentWave].waveTime);
+                foreach (var food in foodsList)
+                {
 
-                CreateFruit(food);
+                    CreateFruit(food);
+                }
+                currentWave++;
+                NextWave();
             }
-            currentWave++;
-            NextWave();
+            else
+            {
+                var randWave = Random.Range(0, waveProperties.Count - 1);
+                var foodsList = waveProperties[randWave].foods;
+                await new WaitForSeconds(waveProperties[randWave].waveTime);
+                foreach (var food in foodsList)
+                {
+
+                    CreateFruit(food);
+                }
+                currentWave++;
+                NextWave();
+            }
         }
+
 
 
     }
     async void CreateFruit(FoodEntry currentFood)
     {
-        if (Application.isPlaying)
+        if (Application.isPlaying && GameActive)
         {
             await new WaitForSeconds(currentFood.delay);
             bool isBomb = currentFood.isBomb;
@@ -111,12 +131,28 @@ public class FruitsManager : MonoBehaviour
                 float xMultiplier = Random.Range(0.9f, 1.1f);
                 fruit.GetComponent<Food>().startSpeed = new Vector2(currentFood.velocity.x * xMultiplier, Random.Range(12, 14));
             }
+            fruit.GetComponent<Food>().FM = transform.gameObject;
 
 
         }
 
     }
 
+
+    public void BombLoose(GameObject bomb)
+    {
+        var food = bomb.GetComponent<Food>();
+        GameObject splashParticles = Instantiate(food.fruitSplash, bomb.transform.position, Quaternion.identity);
+        GameActive = false;
+    }
+    public void FruitLoose()
+    {
+        misses += 1;
+        if (misses >= 3)
+        {
+            GameActive = false;
+        }
+    }
 
 
 

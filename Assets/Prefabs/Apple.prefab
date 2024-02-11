@@ -117,6 +117,9 @@ MonoBehaviour:
   childRight: {fileID: 6936229415798622668}
   fruitSplash: {fileID: 7012191387158484050, guid: f274aa2706eac9747a7e6ada710f187b, type: 3}
   juiceColor: {r: 0.754717, g: 0.3951584, b: 0.42239785, a: 1}
+  startSound: {fileID: 8300000, guid: 66d60676357b075419ae6f1a7457807e, type: 3}
+  sliceSound: {fileID: 8300000, guid: e484ce91b9587964386a3469eff9dc66, type: 3}
+  gameManager: {fileID: 7440108116356144591, guid: 8b958ec946e079849838ede811277f91, type: 3}
 --- !u!1001 &7472505318263355163
 PrefabInstance:
   m_ObjectHideFlags: 0
