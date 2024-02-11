@@ -1,5 +1,6 @@
  using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Food : MonoBehaviour
@@ -13,6 +14,13 @@ public class Food : MonoBehaviour
     private bool isSlicing = false;
 
     public GameObject fruitExplode;
+
+    public Transform childLeft;
+    public Transform childRight;
+
+
+    public GameObject fruitSplash;
+    public Color juiceColor;
 
 
     [System.Serializable]
@@ -55,8 +63,26 @@ public class Food : MonoBehaviour
     }
     private void Slice()
     {
+
+
         GameObject particles = Instantiate(fruitExplode, transform.position, Quaternion.identity);
+        GameObject splashParticles = Instantiate(fruitSplash, transform.position, Quaternion.identity);
+        particles.GetComponent<ParticleSystem>().startColor = juiceColor;
+        splashParticles.GetComponent<ParticleSystem>().startColor = juiceColor;
+
+        transform.DetachChildren();
+        var childLeftrb = childLeft.AddComponent<Rigidbody2D>();
+        var childRightrb = childRight.AddComponent<Rigidbody2D>();
+        childLeftrb.velocity = new Vector2(rb.velocity.x + Random.Range(-2, -0.1f), rb.velocity.y + Random.Range(0.1f, 0.5f));
+        childRightrb.velocity = new Vector2(rb.velocity.x + Random.Range(0.1f, 2), rb.velocity.y + Random.Range(0.1f, 0.5f));
         Destroy(gameObject);
+
+
+
+
+
+
+
     }
 
     void FruitLoose()

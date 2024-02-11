@@ -113,6 +113,10 @@ MonoBehaviour:
   startSpeed: {x: 0, y: 0}
   rotateSpeed: 180
   fruitExplode: {fileID: 4710457793315237983, guid: 1c279ce472352b5429c7a59f4753a905, type: 3}
+  childLeft: {fileID: 5687660557693475266}
+  childRight: {fileID: 5788234598978101455}
+  fruitSplash: {fileID: 7012191387158484050, guid: f274aa2706eac9747a7e6ada710f187b, type: 3}
+  juiceColor: {r: 0.43422925, g: 0.7735849, b: 0.68720347, a: 1}
 --- !u!1001 &5288378637113671209
 PrefabInstance:
   m_ObjectHideFlags: 0
